@@ -1,0 +1,29 @@
+{
+  "name": "material-ui-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "history": "^1.17.0",
+    "jsx-loader": "^0.13.2",
+    "material-ui": "^0.14.1",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "^1.0.3",
+    "react-tap-event-plugin": "^0.2.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
