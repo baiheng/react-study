@@ -2,10 +2,42 @@ import React, { PropTypes, Component } from 'react'
 
 import Head from './head'
 import LeftMenu from './left_menu'
-import Body from './main_content' 
 
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        console.log("parent construct");
+    }
+
+    componentWillMount() {
+        console.log("parent will mount");
+    }
+
+    componentDidMount() {
+        console.log("parent did mount");
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log("parent will receive prop");
+    }
+
+    shouldComponentUpdate(){
+        console.log("parent should update");
+        return true;
+    }
+
+    componentWillUpdate(nextProps, nextState){
+        console.log("parent will update");
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        console.log("parent did update");
+    }
+
+    componentWillUnmount(){
+        console.log("parent did unmount");
+    }
     render() {
         return (
             <div>
@@ -20,7 +52,7 @@ class App extends Component {
                         marginLeft: "260px", 
                         padding: "20px",
                 }}>
-                    <Body />
+                    {this.props.children}
                 </div>
             </div>
         )

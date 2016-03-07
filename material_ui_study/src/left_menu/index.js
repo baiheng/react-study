@@ -6,42 +6,26 @@ import ContentInbox from 'material-ui/lib/svg-icons/content/inbox';
 import ContentDrafts from 'material-ui/lib/svg-icons/content/drafts';
 import ContentSend from 'material-ui/lib/svg-icons/content/send';
 import Paper from 'material-ui/lib/paper';
-import { SelectableContainerEnhance } from 'material-ui/lib/hoc/selectable-enhance';
-let SelectableList = SelectableContainerEnhance(List);
 
-function wrapState(ComposedComponent) {
-    class StateWrapper extends Component{
-        constructor(props, context) {
-            super(props, context);
-            this.state = {selectedIndex: 1};
-        }
+import { Router, Route, Link, browserHistory } from 'react-router'
 
-        handleUpdateSelectedIndex(e, index) {
-            this.setState({
-                selectedIndex: index,
-            });
-        }
-
-        render() {
-            return (
-                <ComposedComponent
-                    {...this.props}
-                    {...this.state}
-                    valueLink={{
-                        value: this.state.selectedIndex,
-                        requestChange: this.handleUpdateSelectedIndex.bind(this)
-                    }}
-                />
-            );
-        }
-    }
-    return StateWrapper;
-}
-
-SelectableList = wrapState(SelectableList);
 
 class LeftMenu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentIndex: 1
+        }
+    }
+    onClick(index){
+        this.setState({currentIndex: index});
+    }
+
     render() {
+        var index = this.state.currentIndex;
+        var action = {
+            backgroundColor: "rgba(0,0,0,0.2)",
+        }
         return (
             <Paper zDepth={2} rounded={false} 
             style={{
@@ -51,36 +35,48 @@ class LeftMenu extends Component {
                 width: "250px",
                 bottom: 0,
             }}>
-                <SelectableList subheader="Nested List Items">
-                    <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} value={1} />
-                    <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} value={2} />
-                    <ListItem primaryText="Inbox" leftIcon={<ContentInbox />}  value={3}
+                <List subheader="Nested List Items">
+                    <Link to="/" activeStyle={action}>
+                        <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} 
+                        onClick={this.onClick.bind(this, 1)} 
+                        style={index == 10 ? action : {}} key={1}
+                        />
+                    </Link>
+                    <Link to="/sale">
+                        <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} 
+                            onClick={this.onClick.bind(this, 2)} 
+                            style={index == 2 ? action : {}} key={2}
+                        />
+                    </Link>
+                    <ListItem primaryText="Inbox" leftIcon={<ContentInbox />}  key={3}
+                        onClick={this.onClick.bind(this, 3)} 
+                        style={index == 3 ? action : {}}
                         primaryTogglesNestedList={true}
                         nestedItems={[
-                            <ListItem
-                                key={1}
-                                value={4}
-                                primaryText="Starred"
-                                leftIcon={<ActionGrade />}
+                            <ListItem primaryText="Starred" leftIcon={<ActionGrade />}  key={4}
+                                onClick={this.onClick.bind(this, 4)} 
+                                style={index == 4 ? action : {}}
                             />,
                             <ListItem
-                                key={2}
-                                value={5}
                                 primaryText="Sent Mail"
                                 leftIcon={<ContentSend />}
                                 primaryTogglesNestedList={true}
+                                key={5}
+                                onClick={this.onClick.bind(this, 5)} 
+                                style={index == 5 ? action : {}}
                                 nestedItems={[
                                     <ListItem 
-                                        key={1} 
                                         primaryText="Drafts"
                                         leftIcon={<ContentDrafts />}
-                                        value={6}
+                                        onClick={this.onClick.bind(this, 6)} 
+                                        style={index == 6 ? action : {}}
+                                        key={6}
                                     />,
                                 ]}
                             />,
                         ]}
                     />
-                </SelectableList>
+                </List>
             </Paper>
         )
     }

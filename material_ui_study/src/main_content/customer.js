@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 
 
-class Body extends Component {
+export default class Customer extends Component {
     render() {
         return (
             <table className="am-table am-table-bordered am-table-hover">
@@ -33,5 +33,3 @@ class Body extends Component {
         )
     }
 }
-
-export default Body;
