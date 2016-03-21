@@ -19,6 +19,7 @@ class LeftMenu extends Component {
     }
     onClick(index){
         this.setState({currentIndex: index});
+        console.log(this.props.location);
     }
 
     render() {
@@ -26,6 +27,7 @@ class LeftMenu extends Component {
         var action = {
             backgroundColor: "rgba(0,0,0,0.2)",
         }
+        console.log(this.props.location);
         return (
             <Paper zDepth={2} rounded={false} 
             style={{
@@ -36,12 +38,10 @@ class LeftMenu extends Component {
                 bottom: 0,
             }}>
                 <List subheader="Nested List Items">
-                    <Link to="/" activeStyle={action}>
-                        <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} 
-                        onClick={this.onClick.bind(this, 1)} 
-                        style={index == 10 ? action : {}} key={1}
-                        />
-                    </Link>
+                    <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} 
+                    onClick={this.onClick.bind(this, 1)} 
+                    style={index == 1 ? action : {}} key={1}
+                    />
                     <Link to="/sale">
                         <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} 
                             onClick={this.onClick.bind(this, 2)} 
