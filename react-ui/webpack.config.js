@@ -19,7 +19,7 @@ module.exports = {
         loaders:[
           {
             test: /\.js[x]?$/,
-            exclude: /node_modules/,
+            exclude: ['/node_modules/', '/node_modules/rctui/'],
             loaders: ['react-hot', 'babel'],
           },
         ]
