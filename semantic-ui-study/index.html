@@ -1,0 +1,148 @@
+<html>
+<head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>semantic-ui</title>
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="node_modules/semantic-ui/dist/semantic.min.css"/>
+</head>
+<body>
+    <div style="position: fixed; width: 100%;height: 65px;background-color:#5F9EA0;z-index: 100;">
+    </div>
+    <div style="overflow: auto;position: fixed;top:66px;width:250px;bottom:0;background-color: #778899">
+        <div class="ui styled fluid accordion" style="border-radius:0">
+            <div class="title" style="background-color: #009688">
+                <i class="dropdown icon"></i> What is a dog?
+            </div>
+            <div class="content" style="padding: 0;background-color: #778899">
+                <div class="ui large relaxed selection list">
+                    <a class="item">
+                        aa
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                </div>
+            </div>
+            <div class="title" style="background-color: #009688">
+                <i class="dropdown icon"></i> What kinds of dogs are there? 
+            </div>
+            <div class="content" style="padding: 0;background-color: #778899">
+                <div class="ui large relaxed selection list">
+                    <a class="item">
+                        aa
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative;top:66px;margin-left: 260px;padding: 20px">
+        <div class="ui fluid container">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="four wide column">a</div>
+                    <div class="four wide column">b</div>
+                    <div class="four wide column">c</div>
+                    <div class="four wide column">d</div>
+                </div>
+                <div class="row">
+                    <div class="four wide column">e</div>
+                    <div class="four wide column">f</div>
+                    <div class="four wide column">g</div>
+                    <div class="four wide column">t</div>
+                </div>
+                <div class="row">
+                    <table class="ui celled table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <td>约翰</td>
+                            <td>已审核</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>杰米</td>
+                            <td>已审核</td>
+                            <td>必须回答</td>
+                        </tr>
+                        <tr>
+                            <td>吉尔</td>
+                            <td>Denied</td>
+                            <td>None</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>3个 人</th>
+                            <th>2个 已审批</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    </table>
+                </div>
+                <div class="row">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>First Name</label>
+                            <input type="text" name="first-name" placeholder="First Name">
+                        </div>
+                        <div class="field">
+                            <label>Last Name</label>
+                            <input type="text" name="last-name" placeholder="Last Name">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                            <input type="checkbox" tabindex="0" class="hidden">
+                            <label>I agree to the Terms and Conditions</label>
+                            </div>
+                        </div>
+                        <div class="inline field">
+                            <div class="ui slider checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden" id="a">
+                                <label>Slider</label>
+                            </div>
+                        </div>
+                        <div class="inline field">
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden">
+                                <label>Toggle</label>
+                            </div>
+                        </div>
+                        <button class="ui button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/semantic-ui/dist/semantic.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.ui.accordion').accordion({'exclusive': false});
+            $('.ui.radio.checkbox').checkbox();
+            $('.ui.checkbox').checkbox();
+        })
+    </script>
+</boby>
+</html>
