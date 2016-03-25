@@ -66,7 +66,7 @@
                     <div class="four wide column">t</div>
                 </div>
                 <div class="row">
-                    <table class="ui celled table">
+                    <table class="ui celled table attached">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -99,6 +99,10 @@
                         </tr>
                     </tfoot>
                     </table>
+                    <div class="ui bottom attached warning message  fluid">
+                        <i class="icon help"></i>
+                        Already signed up? <a href="#">Login here</a> instead.
+                    </div>
                 </div>
                 <div class="row">
                     <form class="ui form">
@@ -131,6 +135,63 @@
                         <button class="ui button" type="submit">Submit</button>
                     </form>
                 </div>
+                <div class="row">
+                    <div>
+                        <div class="ui pointing secondary menu">
+                            <a class="active item" data-tab="first">First</a>
+                            <a class="item" data-tab="second">Second</a>
+                            <a class="item" data-tab="third">Third</a>
+                        </div>
+                        <div class="ui active tab segment" data-tab="first">
+                            1
+                        </div>
+                        <div class="ui tab segment" data-tab="second">
+                        2502
+                        </div>
+                        <div class="ui tab segment" data-tab="third">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui button" id="tbutton">Show flowing popup</div>
+                    <div class="ui custom flowing popup top left transition hidden">
+                        <div class="ui three column divided center aligned grid">
+                            <div class="column">
+                                <h4 class="ui header">Basic Plan</h4>
+                                <p><b>2</b> projects, $10 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                            <div class="column">
+                                <h4 class="ui header">Business Plan</h4>
+                                <p><b>5</b> projects, $20 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                            <div class="column">
+                                <h4 class="ui header">Premium Plan</h4>
+                                <p><b>8</b> projects, $25 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui modal">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            Profile Picture
+                        </div>
+                        <div class="actions">
+                            <div class="ui black deny button">
+                                Nope
+                            </div>
+                            <div class="ui positive right labeled icon button">
+                                Yep, that's me
+                                <i class="checkmark icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -142,6 +203,11 @@
             $('.ui.accordion').accordion({'exclusive': false});
             $('.ui.radio.checkbox').checkbox();
             $('.ui.checkbox').checkbox();
+            $('.menu .item').tab();
+            $('#tbutton').popup({
+                popup: $('.custom.popup'),
+                on: 'click',
+            });
         })
     </script>
 </boby>

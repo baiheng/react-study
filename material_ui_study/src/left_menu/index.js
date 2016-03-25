@@ -19,7 +19,7 @@ class LeftMenu extends Component {
     }
     onClick(index){
         this.setState({currentIndex: index});
-        console.log(this.props.location);
+        // console.log(this.props.location);
     }
 
     render() {
@@ -27,7 +27,7 @@ class LeftMenu extends Component {
         var action = {
             backgroundColor: "rgba(0,0,0,0.2)",
         }
-        console.log(this.props.location);
+        // console.log(this.props.location);
         return (
             <Paper zDepth={2} rounded={false} 
             style={{

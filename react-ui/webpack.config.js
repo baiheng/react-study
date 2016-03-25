@@ -19,7 +19,7 @@ module.exports = {
         loaders:[
           {
             test: /\.js[x]?$/,
-            exclude: ['/node_modules/', '/node_modules/rctui/'],
+            exclude: '/node_modules/',
             loaders: ['react-hot', 'babel'],
           },
         ]
@@ -29,8 +29,11 @@ module.exports = {
         //     compress: {
         //         warnings: false
         //     }
-        // }),
+        // // }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+        new webpack.NoErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
         ]
 }
