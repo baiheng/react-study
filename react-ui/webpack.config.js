@@ -22,6 +22,10 @@ module.exports = {
             exclude: /node_modules/,
             loaders: ['react-hot', 'babel'],
           },
+          // {
+          //   test: require.resolve('jquery'), 
+          //   loader: 'expose?jQuery'
+          // },
         ]
     },
     plugins: [
@@ -29,6 +33,11 @@ module.exports = {
         //     compress: {
         //         warnings: false
         //     }
+        // }),
+        // new webpack.ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     "window.jQuery": "jquery"
         // }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
