@@ -1,0 +1,214 @@
+<html>
+<head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>semantic-ui</title>
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="node_modules/semantic-ui/dist/semantic.min.css"/>
+</head>
+<body>
+    <div style="position: fixed; width: 100%;height: 65px;background-color:#5F9EA0;z-index: 100;">
+    </div>
+    <div style="overflow: auto;position: fixed;top:66px;width:250px;bottom:0;background-color: #778899">
+        <div class="ui styled fluid accordion" style="border-radius:0">
+            <div class="title" style="background-color: #009688">
+                <i class="dropdown icon"></i> What is a dog?
+            </div>
+            <div class="content" style="padding: 0;background-color: #778899">
+                <div class="ui large relaxed selection list">
+                    <a class="item">
+                        aa
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                </div>
+            </div>
+            <div class="title" style="background-color: #009688">
+                <i class="dropdown icon"></i> What kinds of dogs are there? 
+            </div>
+            <div class="content" style="padding: 0;background-color: #778899">
+                <div class="ui large relaxed selection list">
+                    <a class="item">
+                        aa
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                    <a class="item">
+                        Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative;top:66px;margin-left: 260px;padding: 20px">
+        <div class="ui fluid container">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="four wide column">a</div>
+                    <div class="four wide column">b</div>
+                    <div class="four wide column">c</div>
+                    <div class="four wide column">d</div>
+                </div>
+                <div class="row">
+                    <div class="four wide column">e</div>
+                    <div class="four wide column">f</div>
+                    <div class="four wide column">g</div>
+                    <div class="four wide column">t</div>
+                </div>
+                <div class="row">
+                    <table class="ui celled table attached">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <td>约翰</td>
+                            <td>已审核</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>杰米</td>
+                            <td>已审核</td>
+                            <td>必须回答</td>
+                        </tr>
+                        <tr>
+                            <td>吉尔</td>
+                            <td>Denied</td>
+                            <td>None</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>3个 人</th>
+                            <th>2个 已审批</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    </table>
+                    <div class="ui bottom attached warning message  fluid">
+                        <i class="icon help"></i>
+                        Already signed up? <a href="#">Login here</a> instead.
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>First Name</label>
+                            <input type="text" name="first-name" placeholder="First Name">
+                        </div>
+                        <div class="field">
+                            <label>Last Name</label>
+                            <input type="text" name="last-name" placeholder="Last Name">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                            <input type="checkbox" tabindex="0" class="hidden">
+                            <label>I agree to the Terms and Conditions</label>
+                            </div>
+                        </div>
+                        <div class="inline field">
+                            <div class="ui slider checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden" id="a">
+                                <label>Slider</label>
+                            </div>
+                        </div>
+                        <div class="inline field">
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden">
+                                <label>Toggle</label>
+                            </div>
+                        </div>
+                        <button class="ui button" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="ui pointing secondary menu">
+                            <a class="active item" data-tab="first">First</a>
+                            <a class="item" data-tab="second">Second</a>
+                            <a class="item" data-tab="third">Third</a>
+                        </div>
+                        <div class="ui active tab segment" data-tab="first">
+                            1
+                        </div>
+                        <div class="ui tab segment" data-tab="second">
+                        2502
+                        </div>
+                        <div class="ui tab segment" data-tab="third">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui button" id="tbutton">Show flowing popup</div>
+                    <div class="ui custom flowing popup top left transition hidden">
+                        <div class="ui three column divided center aligned grid">
+                            <div class="column">
+                                <h4 class="ui header">Basic Plan</h4>
+                                <p><b>2</b> projects, $10 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                            <div class="column">
+                                <h4 class="ui header">Business Plan</h4>
+                                <p><b>5</b> projects, $20 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                            <div class="column">
+                                <h4 class="ui header">Premium Plan</h4>
+                                <p><b>8</b> projects, $25 a month</p>
+                                <div class="ui button">Choose</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ui modal">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            Profile Picture
+                        </div>
+                        <div class="actions">
+                            <div class="ui black deny button">
+                                Nope
+                            </div>
+                            <div class="ui positive right labeled icon button">
+                                Yep, that's me
+                                <i class="checkmark icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/semantic-ui/dist/semantic.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.ui.accordion').accordion({'exclusive': false});
+            $('.ui.radio.checkbox').checkbox();
+            $('.ui.checkbox').checkbox();
+            $('.menu .item').tab();
+            $('#tbutton').popup({
+                popup: $('.custom.popup'),
+                on: 'click',
+            });
+        })
+    </script>
+</boby>
+</html>

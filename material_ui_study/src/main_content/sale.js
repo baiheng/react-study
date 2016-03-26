@@ -11,42 +11,42 @@ class Customer extends Component {
     }
 
     componentWillMount() {
-        console.log("will mount");
+        // console.log("will mount");
     }
 
     componentDidMount() {
-        console.log("did mount");
+        console.log($("#a"));
         this.setState({
             sale_title: "sdafadf"
         });
     }
 
     componentWillReceiveProps(nextProps){
-        console.log("will receive prop");
-        console.log(nextProps);
-        console.log(this.props);
+        // console.log("will receive prop");
+        // console.log(nextProps);
+        // console.log(this.props);
     }
 
     shouldComponentUpdate(){
-        console.log("should update");
+        // console.log("should update");
         return true;
     }
 
     componentWillUpdate(nextProps, nextState){
-        console.log("will update");
+        // console.log("will update");
     }
 
     componentDidUpdate(prevProps, prevState){
-        console.log("did update");
+        // console.log("did update");
     }
 
     componentWillUnmount(){
-        console.log("did unmount");
+        // console.log("did unmount");
     }
 
     render() {
         return (
-            <table className="am-table am-table-bordered am-table-hover">
+            <table className="am-table am-table-bordered am-table-hover" id="a">
                 <thead>
                     <tr>
                         <th>abd</th>

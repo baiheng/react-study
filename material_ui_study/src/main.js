@@ -7,36 +7,37 @@ import LeftMenu from './left_menu'
 class App extends Component {
     constructor(props) {
         super(props);
-        console.log("parent construct");
+        // console.log("parent construct");
     }
 
     componentWillMount() {
-        console.log("parent will mount");
+        // console.log("parent will mount");
     }
 
     componentDidMount() {
-        console.log("parent did mount");
+        
+
     }
 
     componentWillReceiveProps(nextProps){
-        console.log("parent will receive prop");
+        // console.log("parent will receive prop");
     }
 
     shouldComponentUpdate(){
-        console.log("parent should update");
+        // console.log("parent should update");
         return true;
     }
 
     componentWillUpdate(nextProps, nextState){
-        console.log("parent will update");
+        // console.log("parent will update");
     }
 
     componentDidUpdate(prevProps, prevState){
-        console.log("parent did update");
+        // console.log("parent did update");
     }
 
     componentWillUnmount(){
-        console.log("parent did unmount");
+        // console.log("parent did unmount");
     }
     render() {
         return (

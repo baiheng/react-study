@@ -19,7 +19,7 @@ module.exports = {
         loaders:[
           {
             test: /\.js[x]?$/,
-            exclude: /node_modules/,
+            exclude: '/node_modules/',
             loaders: ['react-hot', 'babel'],
           },
           // {
@@ -40,6 +40,5 @@ module.exports = {
         //     "window.jQuery": "jquery"
         // }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
         ]
 }
