@@ -6,20 +6,19 @@ const rootRoute = {
 	component: 'div',
 	childRoutes: [{
 		path: '/',
-		// component: require('./components/App'),
 		getComponent(location, cb) {
 			require.ensure([], (require) => {
 				cb(null, require('./components/App'))
 			});
 			window.scrollTo(0,0);
 		},
-		 childRoutes: [
-		 	require('./routes/first'),
-		// 	require('./routes/Course'),
-		// 	require('./routes/Grades'),
+		childRoutes: [
+			require('./routes/form'),
+			require('./routes/table'),
+			require('./routes/modal'),
 		// 	require('./routes/Messages'),
 		// 	require('./routes/Profile')
-		 ]
+		]
 	}]
 }
 

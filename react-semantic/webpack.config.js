@@ -6,7 +6,7 @@ module.exports = {
         main: [
             'webpack-dev-server/client?http://localhost:3000',
             'webpack/hot/only-dev-server',
-            './src/app.js'
+            './src/index.js'
         ]
     },
     output: {
@@ -22,10 +22,6 @@ module.exports = {
             exclude: /node_modules/,
             loaders: ['react-hot', 'babel'],
           },
-          // {
-          //   test: require.resolve('jquery'), 
-          //   loader: 'expose?jQuery'
-          // },
         ]
     },
     plugins: [
