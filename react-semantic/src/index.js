@@ -16,8 +16,9 @@ const rootRoute = {
 			require('./routes/form'),
 			require('./routes/table'),
 			require('./routes/modal'),
-		// 	require('./routes/Messages'),
-		// 	require('./routes/Profile')
+			require('./routes/calendar'),
+			require('./routes/layout'),
+			require('./routes/timeline'),
 		]
 	}]
 }

@@ -2,15 +2,16 @@ import React from 'react'
 
 
 class Table extends React.Component {
+    componentWillMount(){
+    }
     componentDidMount(){
-        $('.ui.radio.checkbox').checkbox();
-        $('.ui.checkbox').checkbox();
+        this.props.changeItem("one");
     }
     render() {
         return (
-            <div className="ui grid" style={{margin:"0px",}}>
+            <div className="container-fluid">
                 <div className="row">
-                    <table className="ui compact celled table">
+                    <table className="table table-hover table-bordered table-condensed bg-white">
                         <tbody>
                             <tr>
                                 <td className="collapsing"><i className="folder icon"></i> node_modules </td>

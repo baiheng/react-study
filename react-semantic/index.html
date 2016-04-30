@@ -9,9 +9,12 @@
     <meta name="renderer" content="webkit">
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="stylesheet" href="./css/semantic.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/animate.css"/>
+    <link rel="stylesheet" href="./css/app.css"/>
+    <link rel="stylesheet" href="./lib/Font-Awesome/css/font-awesome.min.css"/>
     <script src="./lib/jquery.min.js"></script>
-    <script src="./lib/semantic.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
     <style type="text/css">
         .left_menu_title{
             background-color:#2A3F54 !important;
@@ -31,8 +34,10 @@
         }
     </style>
 </head>
-<body>
+<body style="min-width: 800px">
     <div id="app"></div>
-    <script src="./build/bundle.js"></script>
+
+    <script src="build/1.bundle.js"></script>
+    <!-- <script src="build/<%= htmlWebpackPlugin.options.version %>.bundle.js"></script> -->
 </boby>
 </html>

@@ -5,20 +5,15 @@ import { Link } from 'react-router'
 class LeftMenu extends React.Component {
     constructor(props) {
         super(props);
-        // console.log("parent construct");
     }
 
     componentWillMount() {
-        // console.log("parent will mount");
     }
 
     componentDidMount() {
-        $('.ui.accordion').accordion({'exclusive': false});
-        this.openAccordion();
     }
 
     componentWillReceiveProps(nextProps){
-        // console.log("parent will receive prop");
     }
 
     shouldComponentUpdate(){
@@ -31,60 +26,96 @@ class LeftMenu extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        // console.log("parent did update");
-        this.openAccordion();
     }
 
     componentWillUnmount(){
         // console.log("parent did unmount");
     }
 
-    openAccordion(){
-        if(["/", "/form", "/table"].includes(this.props.pathname)){
-            $('.ui.accordion').accordion('open', 0);
-        }else{
-            $('.ui.accordion').accordion('open', 1);
-        }
-    }
-
-    render() {
+    render(){
         return (
-            <div className="ui styled fluid accordion" style={{borderRadius:0}}>
-                <div className="title left_menu_title">
-                    <i className="dropdown icon"></i> What is a dog?
-                </div>
-                <div className="content left_menu"  style={{padding:0}}>
-                    <div className="ui large relaxed  list">
-                        <Link to="/" className="item left_menu_item">
-                            home
-                        </Link>
-                        <Link to="/form" className="item left_menu_item">
-                            form
-                        </Link>
-                        <Link to="/table" className="item left_menu_item">
-                            table
-                        </Link>
-                    </div>
-                </div>
-                <div className="title left_menu_title">
-                    <i className="dropdown icon"></i> What kinds of dogs are there? 
-                </div>
-                <div className="content left_menu" style={{padding:0}}>
-                    <div className="ui large relaxed selection list">
-                        <Link to="/modal" className="item left_menu_item">
-                            modal
-                        </Link>
-                        <a className="item left_menu_item">
-                            Settings
-                        </a>
-                        <a className="item left_menu_item">
-                            Settings
-                        </a>
-                    </div>
-                </div>
-            </div>
+                <nav className="navi">
+                    <ul className="nav">
+                        <li className="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span translate="aside.nav.HEADER">Navigation</span>
+                        </li>
+                        <li className={this.props.open == "one"? "active" : ""}>
+                            <a className="auto" onClick={this.props.changeItem.bind(this, 'one')}>      
+                                <span className="pull-right text-muted">
+                                    <i className="fa fa-fw fa-angle-right text"></i>
+                                    <i className="fa fa-fw fa-angle-down text-active"></i>
+                                </span>
+                                <i className="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                <span className="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>
+                            </a>
+                            <ul className="nav nav-sub dk">
+                                <li className="nav-sub-header">
+                                    <a>
+                                        <span translate="aside.nav.DASHBOARD">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <Link to="/">
+                                        首页
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/form">
+                                        form
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/table">
+                                        <b className="label bg-info pull-right">N</b>
+                                        table
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className={this.props.open == "two"? "active" : ""}>
+                            <a className="auto" onClick={this.props.changeItem.bind(this, 'two')}>      
+                                <span className="pull-right text-muted">
+                                    <i className="fa fa-fw fa-angle-right text"></i>
+                                    <i className="fa fa-fw fa-angle-down text-active"></i>
+                                </span>
+                                <i className="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                <span className="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>
+                            </a>
+                            <ul className="nav nav-sub dk">
+                                <li className="nav-sub-header">
+                                    <a>
+                                        <span translate="aside.nav.DASHBOARD">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <Link to="/modal">
+                                        modal
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/calendar">
+                                        calendar
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/layout">
+                                        <b className="label bg-info pull-right">N</b>
+                                        Layout
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/timeline">
+                                        timeline
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
         )
     }
 }
-
+LeftMenu.defaultProps = {
+    open: "one"
+}
 module.exports = LeftMenu
