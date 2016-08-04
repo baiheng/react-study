@@ -11,7 +11,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
     	<Route path="/" component={App}>
             <IndexRoute component={LhbList} />
-            <Route path="lhb_detail.html" component={LhbDetail} />
+            <Route path="/lhb/lhb_detail.html" component={LhbDetail} />
     	</Route>
     </Router>, 
     document.getElementById('app')

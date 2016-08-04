@@ -85,7 +85,7 @@ class LhbList extends React.Component {
         let hsData = this.state.hsLhbList.map((item, index) => {
             return (
                 <div className="col-md-2" key={index}>
-                    <Link to={{ pathname: '/lhb/lhb_detail.html', query: { id: item.id } }} className="text-info text-info-dker" target="_blank">
+                    <Link to={{ pathname: '/lhb/lhb_detail.html', query: { code: item.code } }} className="text-info text-info-dker" target="_blank">
                     {item.ticket_name} <span className="text-danger-lter">[{item.ticket_change_rate}%]</span>
                     </Link>
                 </div>
