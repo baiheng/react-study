@@ -12,15 +12,20 @@ class LhbList extends React.Component {
     constructor(props, context) {
         super(props, context);
         moment.locale("zh_CN");
+        if(this.props.location.query.date){
+            var date = moment(this.props.location.query.date);
+        }else{
+            var date = moment();
+        }
         this.state = {
-            startDate: moment(),
+            date: date,
             hsLhbList: [],
             ssLhbList: [],
         }
     }
     handleChangeDate(date){
         this.setState({
-            startDate: date
+            date: date
         });
         this.getLhbList(date.format("YYYYMMDD"));
     }
@@ -43,7 +48,8 @@ class LhbList extends React.Component {
                     };
                     this.setState({
                         hsLhbList: hs,
-                        ssLhbList: ss
+                        ssLhbList: ss,
+                        date: moment(data.date),
                     });
                 }else{
                     console.log(data.msg);
@@ -56,7 +62,7 @@ class LhbList extends React.Component {
     }
 
     componentWillMount() {
-        this.getLhbList(this.state.startDate.format("YYYYMMDD"));
+        this.getLhbList(this.state.date.format("YYYYMMDD"));
     }
 
     componentDidMount() {
@@ -82,24 +88,24 @@ class LhbList extends React.Component {
     }
 
     render(){
-        let hsData = this.state.hsLhbList.map((item, index) => {
+        function genTicketList(item, index){
             return (
                 <div className="col-md-2" key={index}>
-                    <Link to={{ pathname: '/lhb/lhb_detail.html', query: { code: item.code } }} className="text-info text-info-dker" target="_blank">
+                    <Link to={{ 
+                        pathname: '/lhb/lhb_detail.html', 
+                        query: { 
+                            code: item.code,
+                            date: this.state.date.format("YYYYMMDD")
+                        } 
+                    }} 
+                    className="text-info text-info-dker" target="_blank">
                     {item.ticket_name} <span className="text-danger-lter">[{item.ticket_change_rate}%]</span>
                     </Link>
                 </div>
             );
-        });
-        let ssData = this.state.ssLhbList.map((item, index) => {
-            return (
-                <div className="col-md-2" key={index}>
-                    <Link to="/" className="text-info text-info-dker" target="_blank">
-                    {item.ticket_name} <span className="text-danger-lter">[{item.ticket_change_rate}%]</span>
-                    </Link>
-                </div>
-            );
-        });
+        };
+        let hsData = this.state.hsLhbList.map(genTicketList.bind(this));
+        let ssData = this.state.ssLhbList.map(genTicketList.bind(this));
         return (
             <div className="hbox hbox-auto-xs bg-light ">
                 <div className="col">
@@ -109,7 +115,7 @@ class LhbList extends React.Component {
                                 <DatePicker 
                                 style={{width: '100px'}}
                                 dateFormat="YYYY-MM-DD"
-                                selected={this.state.startDate}
+                                selected={this.state.date}
                                 placeholderText=" 输入时间" 
                                 onChange={this.handleChangeDate.bind(this)}
                                 todayButton={'今天'} />
