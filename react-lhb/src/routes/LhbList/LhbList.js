@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import moment from 'moment'
-
-import DatePicker from 'react-datepicker'
-import 'lib/react-datepicker/dist/react-datepicker.css'
 import { URL } from 'config'
 
 
@@ -24,9 +20,6 @@ class LhbList extends React.Component {
         }
     }
     handleChangeDate(date){
-        this.setState({
-            date: date
-        });
         this.getLhbList(date.format("YYYYMMDD"));
     }
 
@@ -92,7 +85,7 @@ class LhbList extends React.Component {
             return (
                 <div className="col-md-2" key={index}>
                     <Link to={{ 
-                        pathname: '/lhb/lhb_detail.html', 
+                        pathname: '/pages/lhb_detail', 
                         query: { 
                             code: item.code,
                             date: this.state.date.format("YYYYMMDD")
@@ -112,13 +105,6 @@ class LhbList extends React.Component {
                     <div className="wrapper">
                         <div className="container-fluid">
                             <div className="row m-b-md">
-                                <DatePicker 
-                                style={{width: '100px'}}
-                                dateFormat="YYYY-MM-DD"
-                                selected={this.state.date}
-                                placeholderText=" 输入时间" 
-                                onChange={this.handleChangeDate.bind(this)}
-                                todayButton={'今天'} />
                             </div>
                             <div className="row">
                                 <div className="panel panel-default">

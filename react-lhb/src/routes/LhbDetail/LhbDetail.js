@@ -24,10 +24,7 @@ class LhbDetail extends React.Component {
             },
             success: function(data, textStatus){
                 if(data.ret == 0){
-                    var lhb_detail = [];
-                    this.state.lhbList.map((item) => {
-                        lhb_detail.push(item);
-                    });
+                    var lhb_detail = this.state.lhbList;
                     data.lhb_detail.map((item) => {
                         lhb_detail.push(item);
                     });

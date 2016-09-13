@@ -59,12 +59,12 @@ class LhbItem extends React.Component {
             + item.a_3_buy_transaction_amount + item.a_4_buy_transaction_amount 
             + item.a_5_buy_transaction_amount + item.b_1_buy_transaction_amount
             + item.b_2_buy_transaction_amount + item.b_3_buy_transaction_amount
-            + item.b_4_buy_transaction_amount + item.b_5_buy_transaction_amount);
+            + item.b_4_buy_transaction_amount + item.b_5_buy_transaction_amount).toFixed(2);
         let sale_transaction_amount = (item.a_1_sale_transaction_amount + item.a_2_sale_transaction_amount
             + item.a_3_sale_transaction_amount + item.a_4_sale_transaction_amount 
             + item.a_5_sale_transaction_amount + item.b_1_sale_transaction_amount
             + item.b_2_sale_transaction_amount + item.b_3_sale_transaction_amount
-            + item.b_4_sale_transaction_amount + item.b_5_sale_transaction_amount);
+            + item.b_4_sale_transaction_amount + item.b_5_sale_transaction_amount).toFixed(2);
 
         let b_p = ((buy_transaction_amount /item.ticket_transaction_amount)*100).toFixed(2);
         let s_p = ((sale_transaction_amount /item.ticket_transaction_amount)*100).toFixed(2);
@@ -184,7 +184,7 @@ class LhbItem extends React.Component {
                                 <td>{b_p}%</td>
                                 <td>{sale_transaction_amount}</td>
                                 <td>{s_p}%</td>
-                                <td>{buy_transaction_amount - sale_transaction_amount}</td>
+                                <td>{(buy_transaction_amount - sale_transaction_amount).toFixed(2)}</td>
                             </tr>
                         </tbody>
                     </table>

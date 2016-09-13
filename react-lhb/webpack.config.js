@@ -15,7 +15,7 @@ module.exports = {
         path: __dirname + '/build/',
         filename: version + '.bundle.js',
         publicPath: '/build/',
-        // chunkFilename: '[id].[hash].chunk.js',
+        chunkFilename: '[id].[hash].chunk.js',
     },
     module: {
         loaders:[
