@@ -5,11 +5,14 @@ import { Router, hashHistory, Route, IndexRoute } from 'react-router'
 const rootRoute = {
 	path: "/",
 	component: require('./components/App'),
-	indexRoute: {component: require('./components/Home')},
+	indexRoute: {
+		onEnter: ({params}, replace) => replace("/pages/lhb_list")
+	},
 	getChildRoutes(location, cb) {
 		require.ensure([], (require) => {
 		 	cb(null, [
-				require('./routes'),
+				require('./pages'),
+				require('./login'),
 			])
 		})
 	}

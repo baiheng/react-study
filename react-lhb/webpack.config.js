@@ -27,6 +27,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader",
+            },
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader",
             }
         ]
     },
@@ -35,18 +39,7 @@ module.exports = {
         extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js", ".jsx"],
     },
     plugins: [
-        // new uglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        // new HtmlWebpackPlugin({
-        //     filename: "index.html",
-        //     template: "./index.html",
-        //     version: version,
-        //     inject: false,
-        // })
         ]
 }
